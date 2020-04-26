@@ -1,0 +1,23 @@
+{
+  "name": "atm-module-7-designpatterns",
+  "version": "1.0.0",
+  "description": "Design Patterns JS Hometask",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor ./test/config/protractor.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valeryiaStrom/ATM-module-7-DesignPatterns.git"
+  },
+  "author": "Valeryia Strom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valeryiaStrom/ATM-module-7-DesignPatterns/issues"
+  },
+  "homepage": "https://github.com/valeryiaStrom/ATM-module-7-DesignPatterns#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2"
+  }
+}
