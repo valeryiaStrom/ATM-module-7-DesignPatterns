@@ -13,7 +13,7 @@ describe('campaigns search', function() {
   it('should have at least 1 beauty campaign in search results', async function () {
     let currentPage;
     currentPage = await PageFactory.getPage();
-    currentPage.open();
+    await currentPage.open();
     currentPage = await PageFactory.getPage();
     await currentPage.performSearchByQuery(seacrhQuery);
     currentPage = await PageFactory.getPage();
