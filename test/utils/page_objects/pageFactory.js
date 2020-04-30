@@ -3,16 +3,20 @@ const SearchResultsPage = require("./search_results_page/search_results_page");
 const AbstractPage = require("./abstract_page/abstract_page");
 
 class PageFactory {
-    static getPage(pageName) {
-        switch (pageName) {
-            case "Home":
-                return new HomePage();
-            case "Search Results Page":
-                return new SearchResultsPage();
-            default:
-                return new AbstractPage();        
-        };
-    };
-};
+  static async getPage() {
+    let currentUrl = await browser.getCurrentUrl();
+    console.log(currentUrl);
+    switch (true) {
+      case currentUrl === 'https://www.indiegogo.com/':
+        return new HomePage();
+      case !currentUrl.includes('http'):
+        return new HomePage();
+      case currentUrl.includes('beauty'):
+        return new SearchResultsPage();
+      default:
+        return new AbstractPage();
+    }
+  }
+}
 
 module.exports = PageFactory;

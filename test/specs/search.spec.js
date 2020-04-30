@@ -11,11 +11,16 @@ describe('campaigns search', function() {
   });
 
   it('should have at least 1 beauty campaign in search results', async function () {
-    await PageFactory.getPage('Home').open();
-    await PageFactory.getPage('Home').header.performSearchByQuery(seacrhQuery);
-    const firstSearchResult = PageFactory.getPage('Search Results Page').searchResults.getElementByIndex(0);
+    let currentPage;
+    currentPage = await PageFactory.getPage();
+    currentPage.open();
+    currentPage = await PageFactory.getPage();
+    await currentPage.performSearchByQuery(seacrhQuery);
+    currentPage = await PageFactory.getPage();
+    const firstSearchResult = currentPage.searchResults.getElementByIndex(0);
     await browser.wait(EC.elementToBeClickable(firstSearchResult), 10000);
-    const countOfResults = await PageFactory.getPage('Search Results Page').searchResults.countItems();
+    currentPage = await PageFactory.getPage();
+    const countOfResults = await currentPage.searchResults.countItems();
     console.log(countOfResults);
     expect(countOfResults).to.be.at.least(1);
   });

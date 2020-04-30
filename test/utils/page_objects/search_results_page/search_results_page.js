@@ -4,7 +4,7 @@ const Collection = require('../base_elements/base_collection');
 class SearchResultsPage extends AbstractPage {
   constructor() {
     super();
-    this.searchResults = new Collection('div.discoverableCard-title');
+    this.searchResults = new Collection('css', 'div.discoverableCard-title');
   }
 }
 
