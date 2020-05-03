@@ -3,9 +3,6 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
   },
-  // onPrepare: function() {
-  //   browser.driver.manage().window().maximize();
-  // },
   directConnect: true,
   framework: 'mocha',
   specs: [
