@@ -15,7 +15,7 @@ describe('campaigns search', function() {
     currentPage = await PageFactory.getPage();
     await currentPage.open();
     currentPage = await PageFactory.getPage();
-    await currentPage.performSearchByQuery(seacrhQuery);
+    await currentPage.header.performSearchByQuery(seacrhQuery);
     currentPage = await PageFactory.getPage();
     const firstSearchResult = currentPage.searchResults.getElementByIndex(0);
     await browser.wait(EC.elementToBeClickable(firstSearchResult), 10000);
