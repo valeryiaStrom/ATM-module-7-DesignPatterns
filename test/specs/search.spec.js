@@ -21,7 +21,6 @@ describe('campaigns search', function() {
     await browser.wait(EC.elementToBeClickable(firstSearchResult), 10000);
     currentPage = await PageFactory.getPage();
     const countOfResults = await currentPage.searchResults.countItems();
-    console.log(countOfResults);
     expect(countOfResults).to.be.at.least(1);
   });
 });

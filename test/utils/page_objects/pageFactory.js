@@ -5,7 +5,6 @@ const AbstractPage = require("./abstract_page/abstract_page");
 class PageFactory {
   static async getPage() {
     let currentUrl = await browser.getCurrentUrl();
-    console.log(currentUrl);
     switch (true) {
       case currentUrl === 'https://www.indiegogo.com/':
         return new HomePage();
